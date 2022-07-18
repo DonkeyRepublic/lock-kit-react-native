@@ -18,3 +18,7 @@ const DonkeyLockKit = NativeModules.DonkeyLockKit  ? NativeModules.DonkeyLockKit
 export function multiply(a: number, b: number): Promise<number> {
   return DonkeyLockKit.multiply(a, b);
 }
+
+export function initializeSdk(sdkToken: string, callback: Function) {
+  return DonkeyLockKit.initializeSdk(sdkToken, callback);
+}

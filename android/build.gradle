@@ -8,7 +8,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.5.3'
+    classpath 'com.android.tools.build:gradle:7.0.4'
     // noinspection DifferentKotlinGradleVersion
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
@@ -131,8 +131,9 @@ def kotlin_version = getExtOrDefault('kotlinVersion')
 
 dependencies {
     //noinspection GradleDynamicVersion
-  implementation "com.facebook.react:react-native:+"
+  implementation 'com.facebook.react:react-native:0.20.1'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  implementation 'bike.donkey:lockkit:1.1.2'
 // From node_modules
 }
 
