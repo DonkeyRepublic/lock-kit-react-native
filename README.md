@@ -1,5 +1,5 @@
 # donkey-lock-kit
-Donkey Lock Kit for Android
+Donkey Lock Kit for React Native
 ## Installation
 
 ```sh
