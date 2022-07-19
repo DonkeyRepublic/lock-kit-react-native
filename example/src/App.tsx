@@ -17,11 +17,11 @@ export default function App() {
   React.useEffect(() => {
     setLogLevel(LogLevel.DEBUG)
     setEnvironment(Environment.TEST)
-    initializeSdk('<PROVIDE SDK TOKEN>', (message) => {
-      setSdkInitialized(message)
-      initializeLock(LOCK_NAME, 'key', 'passkey', (message) => {
-        setLockInitialized(message)
-        lock(LOCK_NAME, (message) => { setLockResult(message) });
+    initializeSdk('wzfV-C-biSt2kPmY6hstoyZpH17ufN6M6GRVZYj5', (result) => {
+      setSdkInitialized(result.status)
+      initializeLock(LOCK_NAME, 'key', 'passkey', (result) => {
+        setLockInitialized(result.status)
+        lock(LOCK_NAME, (result) => { setLockResult(result.status) });
       });
     });
   }, []);
