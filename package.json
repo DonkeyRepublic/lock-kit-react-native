@@ -104,16 +104,8 @@
       "prettier"
     ],
     "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ]
+      "prettier/prettier": "off",
+      "@typescript-eslint/no-unused-vars": "off"
     }
   },
   "eslintIgnore": [
