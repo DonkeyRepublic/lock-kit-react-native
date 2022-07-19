@@ -5,14 +5,9 @@ import bike.donkey.lockkit.DonkeyLockKit
 import bike.donkey.lockkit.errors.LockError
 import bike.donkey.lockkit.errors.OngoingActionError
 import bike.donkey.lockkit.errors.UninitializedSdkError
-import com.facebook.react.bridge.Arguments
-import com.facebook.react.bridge.Callback
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactContextBaseJavaModule
-import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.ReadableMap
+import bike.donkey.lockkit.updates.ConnectionUpdate
+import com.facebook.react.bridge.*
 import com.facebook.react.modules.core.DeviceEventManagerModule
-import java.util.concurrent.locks.Lock
 
 class DonkeyLockKitModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
@@ -54,7 +49,7 @@ class DonkeyLockKitModule(reactContext: ReactApplicationContext) : ReactContextB
   fun lock(deviceName: String, callback: Callback) {
     DonkeyLockKit.lock(deviceName, onUpdate = {
       reactApplicationContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java)
-        .emit("onLockUpdate", it.description)
+        .emit("onLockUpdate", it.toReactUpdate())
     }) { result ->
       callback(result.toReactResult())
     }
@@ -64,7 +59,7 @@ class DonkeyLockKitModule(reactContext: ReactApplicationContext) : ReactContextB
   fun unlock(deviceName: String, callback: Callback) {
     DonkeyLockKit.unlock(deviceName, onUpdate = {
       reactApplicationContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java)
-        .emit("onUnlockUpdate", it.description)
+        .emit("onUnlockUpdate", it.toReactUpdate())
     }) { result ->
       callback(result.toReactResult())
     }
@@ -74,7 +69,7 @@ class DonkeyLockKitModule(reactContext: ReactApplicationContext) : ReactContextB
   fun prepareEndRental(deviceName: String, callback: Callback) {
     DonkeyLockKit.prepareEndRental(deviceName, onUpdate = {
       reactApplicationContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java)
-        .emit("onEndRentalUpdate", it.description)
+        .emit("onEndRentalUpdate", it.toReactUpdate())
     }) { result ->
       callback(result.toReactResult())
     }
@@ -104,6 +99,29 @@ class DonkeyLockKitModule(reactContext: ReactApplicationContext) : ReactContextB
         map.putString("detail", (it as? LockError)?.detail)
       }
     )
+    return map
+  }
+
+  private fun ConnectionUpdate.toReactUpdate(): ReadableMap {
+    val map = Arguments.createMap()
+    map.putString(
+      "code", when (this) {
+        ConnectionUpdate.Searching -> "Searching"
+        is ConnectionUpdate.WeakSignal -> "WeakSignal"
+        ConnectionUpdate.Connecting -> "Connecting"
+        ConnectionUpdate.Connected -> "Connected"
+        is ConnectionUpdate.ReadCharacteristics -> "ReadCharacteristics"
+        ConnectionUpdate.SendingCommand -> "SendingCommand"
+        ConnectionUpdate.PushToLock -> "PushToLock"
+        ConnectionUpdate.ExtraLockCheck -> "ExtraLockCheck"
+      }
+    )
+    map.putString("description", description)
+    if (this is ConnectionUpdate.ReadCharacteristics) {
+      map.putInt("initialSensor", initialSensor)
+      map.putString("lockSwRevision", lockSwRevision)
+    }
+    if (this is ConnectionUpdate.WeakSignal) map.putInt("rssi", rssi)
     return map
   }
 }

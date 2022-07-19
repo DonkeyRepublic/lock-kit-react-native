@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text, DeviceEventEmitter } from 'react-native';
-import { initializeSdk, initializeLock, lock, setLogLevel, setEnvironment, LogLevel, Environment } from 'donkey-lock-kit';
+import { initializeSdk, initializeLock, lock, setLogLevel, setEnvironment, LogLevel, Environment, ConnectionUpdate } from 'donkey-lock-kit';
 
 
 export default function App() {
@@ -11,13 +11,13 @@ export default function App() {
   const [lockResult, setLockResult] = React.useState<string | undefined>();
   const LOCK_NAME = 'AXA:541930432D2CF3A47725'
 
-  DeviceEventEmitter.addListener('onLockUpdate', (description) => { setLockUpdate(description) });
+  DeviceEventEmitter.addListener('onLockUpdate', (update: ConnectionUpdate) => { setLockUpdate(update.code + '\n' + update.description) });
 
 
   React.useEffect(() => {
     setLogLevel(LogLevel.DEBUG)
     setEnvironment(Environment.TEST)
-    initializeSdk('wzfV-C-biSt2kPmY6hstoyZpH17ufN6M6GRVZYj5', (result) => {
+    initializeSdk('<PROVIDE SDK TOKEN>', (result) => {
       setSdkInitialized(result.status)
       initializeLock(LOCK_NAME, 'key', 'passkey', (result) => {
         setLockInitialized(result.status)

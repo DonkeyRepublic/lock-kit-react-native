@@ -29,6 +29,8 @@ export enum Environment {
 
 export type Result = { status: string, message?: string, detail?: string }
 
+export type ConnectionUpdate = { code: string, description: string, initialSensor?: number, lockSwRevision?: string, rssi?: number }
+
 export function setLogLevel(logLevel: LogLevel) {
   return DonkeyLockKit.setLogLevel(logLevel);
 }
