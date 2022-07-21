@@ -60,6 +60,7 @@ android {
 repositories {
   mavenCentral()
   google()
+  maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
 
   def found = false
   def defaultDir = null
@@ -133,7 +134,7 @@ dependencies {
     //noinspection GradleDynamicVersion
   implementation 'com.facebook.react:react-native:0.20.1'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  implementation 'bike.donkey:lockkit:1.1.2'
+  api 'bike.donkey:lockkit:1.2.0-SNAPSHOT'
 // From node_modules
 }
 

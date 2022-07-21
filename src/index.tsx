@@ -27,7 +27,7 @@ export enum Environment {
   LIVE,
 }
 
-export type Result = { status: string, message?: string, detail?: string }
+export type Result = { status: string, code?: string, detail?: string }
 
 export type ConnectionUpdate = { code: string, description: string, initialSensor?: number, lockSwRevision?: string, rssi?: number }
 

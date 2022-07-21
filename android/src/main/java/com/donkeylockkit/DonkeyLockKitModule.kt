@@ -87,40 +87,55 @@ class DonkeyLockKitModule(reactContext: ReactApplicationContext) : ReactContextB
     fold(
       onSuccess = { map.putString("status", "success") },
       onFailure = {
+        map.putString("status", "failure")
         map.putString(
-          "status", when (it) {
-            is OngoingActionError -> "OngoingAction"
-            is UninitializedSdkError -> "Uninitialized"
-            is LockError -> it.code
-            else -> "Unknown"
+          "code", when (it) {
+            is OngoingActionError -> "ongoing_action"
+            is UninitializedSdkError -> "uninitialized_sdk"
+            is LockError -> it.toErrorCode()
+            else -> "fatal_error"
           }
         )
-        map.putString("message", it.message)
-        map.putString("detail", (it as? LockError)?.detail)
+        map.putString("detail", (it as? LockError)?.detail ?: it.message)
       }
     )
     return map
+  }
+
+  private fun LockError.toErrorCode() = when (this) {
+    LockError.OutOfKeys -> "out_of_keys"
+    LockError.BluetoothOff -> "bluetooth_off"
+    LockError.BluetoothUnauthorized -> "bluetooth_unauthorized"
+    LockError.LocationOff -> "location_off"
+    LockError.LocationPermission -> "location_permission"
+    LockError.OfflineDuringPickup -> "offline_during_pickup"
+    LockError.SearchTimeout -> "search_timeout"
+    is LockError.ConnectionError -> "fatal_error"
+    LockError.ConnectionTimeout -> "connection_timeout"
+    LockError.UnlockTimeout -> "unlock_timeout"
+    is LockError.UnlockCommandError -> "fatal_error"
+    LockError.LockTimeout -> "lock_timeout"
+    is LockError.LockCommandError -> "fatal_error"
+    LockError.PostConnectionLockCheckFailed -> "post_connection_lock_check_failed"
+    is LockError.ExtraLockCheckFailed -> "extra_lock_check_failed"
+    is LockError.FatalError -> "fatal_error"
   }
 
   private fun ConnectionUpdate.toReactUpdate(): ReadableMap {
     val map = Arguments.createMap()
     map.putString(
       "code", when (this) {
-        ConnectionUpdate.Searching -> "Searching"
-        is ConnectionUpdate.WeakSignal -> "WeakSignal"
-        ConnectionUpdate.Connecting -> "Connecting"
-        ConnectionUpdate.Connected -> "Connected"
-        is ConnectionUpdate.ReadCharacteristics -> "ReadCharacteristics"
-        ConnectionUpdate.SendingCommand -> "SendingCommand"
-        ConnectionUpdate.PushToLock -> "PushToLock"
-        ConnectionUpdate.ExtraLockCheck -> "ExtraLockCheck"
+        ConnectionUpdate.Searching -> "searching"
+        is ConnectionUpdate.WeakSignal -> "weak_signal"
+        ConnectionUpdate.Connecting -> "connecting"
+        ConnectionUpdate.Connected -> "connected"
+        is ConnectionUpdate.ReadCharacteristics -> "reading_lock_data"
+        ConnectionUpdate.SendingCommand -> "sending_command"
+        ConnectionUpdate.PushToLock -> "push_to_lock"
+        ConnectionUpdate.ExtraLockCheck -> "extra_lock_check"
       }
     )
     map.putString("description", description)
-    if (this is ConnectionUpdate.ReadCharacteristics) {
-      map.putInt("initialSensor", initialSensor)
-      map.putString("lockSwRevision", lockSwRevision)
-    }
     if (this is ConnectionUpdate.WeakSignal) map.putInt("rssi", rssi)
     return map
   }
