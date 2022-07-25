@@ -8,7 +8,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.5.3'
+    classpath 'com.android.tools.build:gradle:7.0.4'
     // noinspection DifferentKotlinGradleVersion
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
@@ -60,6 +60,7 @@ android {
 repositories {
   mavenCentral()
   google()
+  maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
 
   def found = false
   def defaultDir = null
@@ -131,8 +132,9 @@ def kotlin_version = getExtOrDefault('kotlinVersion')
 
 dependencies {
     //noinspection GradleDynamicVersion
-  implementation "com.facebook.react:react-native:+"
+  implementation 'com.facebook.react:react-native:0.20.1'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  api 'bike.donkey:lockkit:1.2.0-SNAPSHOT'
 // From node_modules
 }
 
