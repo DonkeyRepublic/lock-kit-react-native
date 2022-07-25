@@ -9,11 +9,52 @@ npm install donkey-lock-kit
 ## Usage
 
 ```js
-import { multiply } from "donkey-lock-kit";
+import {
+  ConnectionUpdate,
+  setLogLevel,
+  LogLevel,
+  setEnvironment,
+  Environment,
+  initializeSdk,
+  initializeLock,
+  lock,
+  Result,
+  unlock,
+  prepareEndRental,
+  finalizeLock,
+} from 'donkey-lock-kit';
 
 // ...
+// optionally update the config values
+setLogLevel(LogLevel.DEBUG)
+setEnvironment(Environment.TEST)
 
-const result = await multiply(3, 7);
+// initialize the sdk
+initializeSdk('<INSERT SDK TOKEN>', (result: Result) => { ... });
+
+// initialize the lock before doing any other action with it (initialize only once)
+initializeLock('<DEVICE_NAME>', '<KEY>', '<PASSKEY>', (result: Result) => { ... });
+
+// example usage for unlocking
+unlock('<DEVICE_NAME>', (result: Result) => { ... });
+
+// listen for unlock updates
+DeviceEventEmitter.addListener('onUnlockUpdate', (update: ConnectionUpdate) => { ... });
+
+// example usage for locking
+lock('<DEVICE_NAME>', (result: Result) => { ... });
+
+// listen for lock updates
+DeviceEventEmitter.addListener('onLockUpdate', (update: ConnectionUpdate) => { ... });
+
+// example usage for preparing end rental
+prepareEndRental('<DEVICE_NAME>', (result: Result) => { ... });
+
+// listen for end rental updates
+DeviceEventEmitter.addListener('onEndRentalUpdate', (update: ConnectionUpdate) => { ... });
+
+// remember to finalize the lock when not having any more use for it (usually after end rental on TOMP)
+finalizeLock('<DEVICE_NAME>', (result: Result) => { ... });
 ```
 
 ## Contributing
