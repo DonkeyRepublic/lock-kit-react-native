@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E555C0D2413F4C50049A1A2 /* DonkeyLockKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* DonkeyLockKit.m */; };
+		3D5AE296BAE4CDDD6A99AFE7 /* Pods_DonkeyLockKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188DD0CA8FE8D770581C4949 /* Pods_DonkeyLockKit.framework */; };
+		88B1317F28900099004A6D07 /* DonkeyLockKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B1317E28900099004A6D07 /* DonkeyLockKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +25,11 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libDonkeyLockKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDonkeyLockKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		188DD0CA8FE8D770581C4949 /* Pods_DonkeyLockKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DonkeyLockKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F3A6B548DB78BBF7D5332A0 /* Pods-DonkeyLockKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonkeyLockKit.debug.xcconfig"; path = "Target Support Files/Pods-DonkeyLockKit/Pods-DonkeyLockKit.debug.xcconfig"; sourceTree = "<group>"; };
+		6E530595CBEF01F046933D33 /* Pods-DonkeyLockKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonkeyLockKit.release.xcconfig"; path = "Target Support Files/Pods-DonkeyLockKit/Pods-DonkeyLockKit.release.xcconfig"; sourceTree = "<group>"; };
+		88B1317D28900099004A6D07 /* DonkeyLockKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DonkeyLockKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		88B1317E28900099004A6D07 /* DonkeyLockKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonkeyLockKit.swift; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* DonkeyLockKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonkeyLockKit.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* DonkeyLockKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonkeyLockKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5AE296BAE4CDDD6A99AFE7 /* Pods_DonkeyLockKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,12 +54,33 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		22D0E4B6CA839A3DF693C54D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				188DD0CA8FE8D770581C4949 /* Pods_DonkeyLockKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		391AEAA8962FEB8BC2B32C82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F3A6B548DB78BBF7D5332A0 /* Pods-DonkeyLockKit.debug.xcconfig */,
+				6E530595CBEF01F046933D33 /* Pods-DonkeyLockKit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				88B1317D28900099004A6D07 /* DonkeyLockKit-Bridging-Header.h */,
+				88B1317E28900099004A6D07 /* DonkeyLockKit.swift */,
 				B3E7B5881CC2AC0600A0062D /* DonkeyLockKit.h */,
 				B3E7B5891CC2AC0600A0062D /* DonkeyLockKit.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				391AEAA8962FEB8BC2B32C82 /* Pods */,
+				22D0E4B6CA839A3DF693C54D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +91,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "DonkeyLockKit" */;
 			buildPhases = (
+				65124300B7C53220F9F30796 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -87,6 +116,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -108,12 +138,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		65124300B7C53220F9F30796 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DonkeyLockKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* DonkeyLockKit.m in Sources */,
+				88B1317F28900099004A6D07 /* DonkeyLockKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,33 +272,44 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F3A6B548DB78BBF7D5332A0 /* Pods-DonkeyLockKit.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = DonkeyLockKit;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DonkeyLockKit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E530595CBEF01F046933D33 /* Pods-DonkeyLockKit.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = DonkeyLockKit;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DonkeyLockKit-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

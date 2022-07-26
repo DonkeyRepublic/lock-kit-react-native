@@ -1,0 +1,11 @@
+framework module DonkeyLockKit {
+  umbrella header "DonkeyLockKit.h"
+
+  export *
+  module * { export * }
+}
+
+module DonkeyLockKit.Swift {
+    header "DonkeyLockKit-Swift.h"
+    requires objc
+}

@@ -1,0 +1,16 @@
+PODS:
+  - DonkeyLockKit (1.1.1)
+
+DEPENDENCIES:
+  - DonkeyLockKit (= 1.1.1)
+
+SPEC REPOS:
+  trunk:
+    - DonkeyLockKit
+
+SPEC CHECKSUMS:
+  DonkeyLockKit: b4db8e2c4ebaf02842d636bf646024e5049cb130
+
+PODFILE CHECKSUM: e615a04bebfcf03da2e33d6d677a598b42cc7cc7
+
+COCOAPODS: 1.11.3

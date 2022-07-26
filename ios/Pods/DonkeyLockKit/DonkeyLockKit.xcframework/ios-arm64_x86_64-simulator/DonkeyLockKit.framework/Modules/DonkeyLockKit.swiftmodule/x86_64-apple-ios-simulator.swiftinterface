@@ -1,0 +1,131 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name DonkeyLockKit
+import CoreBluetooth
+import CoreBluetooth/*.CBCharacteristicWriteType*/
+import CoreBluetooth/*.CBManagerState*/
+import CoreBluetooth/*.CBUUID*/
+import CoreLocation
+import CoreLocation/*.CLLocation*/
+import Darwin
+import Dispatch
+@_exported import DonkeyLockKit
+import Foundation
+import Foundation/*.memcmp*/
+import Swift
+import SystemConfiguration
+import os
+prefix operator /
+precedencegroup CasePathCompositionPrecedence {
+  associativity: right
+}
+infix operator .. : CasePathCompositionPrecedence
+public enum LogLevel : Swift.Comparable {
+  case debug
+  case info
+  case error
+  case off
+  public static func == (a: DonkeyLockKit.LogLevel, b: DonkeyLockKit.LogLevel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func < (a: DonkeyLockKit.LogLevel, b: DonkeyLockKit.LogLevel) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension NSRecursiveLock {
+  @discardableResult
+  @inlinable internal func sync<R>(work: () -> R) -> R {
+    self.lock()
+    defer { self.unlock() }
+    return work()
+  }
+}
+public struct LockKitConfiguration {
+  public init(logLevel: DonkeyLockKit.LogLevel, environment: DonkeyLockKit.ServerEnvironment)
+  public static let `default`: DonkeyLockKit.LockKitConfiguration
+  public let logLevel: DonkeyLockKit.LogLevel
+  public let environment: DonkeyLockKit.ServerEnvironment
+}
+public typealias LockName = Swift.String
+@_hasMissingDesignatedInitializers public class LockKit {
+  public static let shared: DonkeyLockKit.LockKit
+  public func configure(_ configuration: DonkeyLockKit.LockKitConfiguration)
+  public func set(logLevel: DonkeyLockKit.LogLevel)
+  public func set(serverEnvironment: DonkeyLockKit.ServerEnvironment)
+  public func initializeSDK(sdkToken: Swift.String, onResult: @escaping (Swift.Result<Swift.Void, DonkeyLockKit.InitializeSDKError>) -> Swift.Void)
+  public func initializeLock(lockName: DonkeyLockKit.LockName, eKey: Swift.String, passkey: Swift.String) -> Swift.Result<Swift.Void, DonkeyLockKit.InitializeLockError>
+  public func unlock(lockName: DonkeyLockKit.LockName, onStatusChanged: @escaping (DonkeyLockKit.StatusUpdate) -> Swift.Void, onResult: @escaping (Swift.Result<Swift.Void, DonkeyLockKit.LockError>) -> Swift.Void)
+  public func lock(lockName: DonkeyLockKit.LockName, onStatusChanged: @escaping (DonkeyLockKit.StatusUpdate) -> Swift.Void, onResult: @escaping (Swift.Result<Swift.Void, DonkeyLockKit.LockError>) -> Swift.Void)
+  public func prepareEndRental(lockName: DonkeyLockKit.LockName, onStatusChanged: @escaping (DonkeyLockKit.StatusUpdate) -> Swift.Void, onResult: @escaping (Swift.Result<Swift.Void, DonkeyLockKit.LockError>) -> Swift.Void)
+  public func finalizeLock(lockName: DonkeyLockKit.LockName) -> Swift.Result<Swift.Void, DonkeyLockKit.FinalizeLockError>
+  @objc deinit
+}
+public enum StatusUpdate : Swift.Equatable {
+  case searching
+  case weakSignal(rssi: Swift.Int)
+  case connecting
+  case connected
+  case readingLockData
+  case postConnectionLockCheck
+  case sendingCommand
+  case waitingForUserAction
+  case extraLockCheck
+  public static func == (a: DonkeyLockKit.StatusUpdate, b: DonkeyLockKit.StatusUpdate) -> Swift.Bool
+}
+public enum InitializeSDKError : Swift.String, Swift.Error, Swift.Equatable {
+  case tokenNotSet
+  case tokenInvalid
+  case ongoingInitializationWithDifferentToken
+  case failedToInitializeStorage
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum InitializeLockError : Swift.Error, Swift.Equatable {
+  case failedToInitializeSDK(DonkeyLockKit.InitializeSDKError)
+  case ongoingLockAction
+  public static func == (a: DonkeyLockKit.InitializeLockError, b: DonkeyLockKit.InitializeLockError) -> Swift.Bool
+}
+public enum FinalizeLockError : Swift.Error, Swift.Equatable {
+  case failedToInitializeSDK(DonkeyLockKit.InitializeSDKError)
+  case ongoingLockAction
+  case lockNotRecognized
+  public static func == (a: DonkeyLockKit.FinalizeLockError, b: DonkeyLockKit.FinalizeLockError) -> Swift.Bool
+}
+public enum LockError : Swift.Error, Swift.Equatable {
+  case failedToInitializeSDK(DonkeyLockKit.InitializeSDKError)
+  case lockNotRecognized
+  case ongoingLockAction
+  case bluetoothOff
+  case bluetoothUnauthorized
+  case searchTimeout
+  case connectionTimeout
+  case lockTimeout
+  case unlockTimeout
+  case postConnectionLockCheckFailed
+  case extraLockCheckFailed
+  case invalidEkey
+  case outOfCommands
+  case fullTimeout
+  case offlineDuringPickup
+  case unknown(message: Swift.String)
+  public static func == (a: DonkeyLockKit.LockError, b: DonkeyLockKit.LockError) -> Swift.Bool
+}
+public struct CasePath<Root, Value> {
+}
+public func _unimplemented(_ function: Swift.StaticString, file: Swift.StaticString = #file, line: Swift.UInt = #line) -> Swift.Never
+public enum ServerEnvironment : Swift.Equatable {
+  case live
+  case test
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: DonkeyLockKit.ServerEnvironment, b: DonkeyLockKit.ServerEnvironment) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension DonkeyLockKit.LogLevel : Swift.Hashable {}
+extension DonkeyLockKit.InitializeSDKError : Swift.Hashable {}
+extension DonkeyLockKit.InitializeSDKError : Swift.RawRepresentable {}
+extension DonkeyLockKit.ServerEnvironment : Swift.Hashable {}
