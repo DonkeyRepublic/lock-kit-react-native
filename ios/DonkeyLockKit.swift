@@ -21,7 +21,6 @@ class DonkeyLockKit: RCTEventEmitter {
 
     @objc func initializeSdk(_ sdkToken: String, callback: @escaping RCTResponseSenderBlock) {
         LockKit.shared.initializeSDK(sdkToken: sdkToken) { result in
-            print("initializeSdk", sdkToken)
             callback([result.toDictionary])
         }
     }
@@ -63,10 +62,10 @@ class DonkeyLockKit: RCTEventEmitter {
         return ["onLockUpdate"]
     }
 
-//    @objc
-//    override static func requiresMainQueueSetup() -> Bool {
-//        true
-//    }
+    @objc
+    override static func requiresMainQueueSetup() -> Bool {
+        true
+    }
 }
 
 extension LogLevel {
@@ -88,24 +87,25 @@ extension Result where Success == Void, Failure: DonkeyLockKitError {
             return ["status": "success"]
         case .failure(let error):
             return [
-                "status": error.statusString,
-                "detail": error.detailString
+                "status": "failure",
+                "code": error.code,
+                "detail": error.detail
             ]
                 .compactMapValues { $0 }
         }
     }
 }
 protocol DonkeyLockKitError: Error {
-    var statusString: String { get }
-    var detailString: String? { get }
+    var code: String { get }
+    var detail: String? { get }
 }
 
 extension InitializeSDKError: DonkeyLockKitError {
-    var statusString: String {
+    var code: String {
         return "uninitialized_sdk"
    }
 
-    var detailString: String? {
+    var detail: String? {
         switch self {
         case .tokenNotSet:
             return "token_not_set"
@@ -122,10 +122,10 @@ extension InitializeSDKError: DonkeyLockKitError {
 }
 
 extension InitializeLockError: DonkeyLockKitError {
-    var statusString: String {
+    var code: String {
         switch self {
         case .failedToInitializeSDK(let error):
-            return error.statusString
+            return error.code
         case .ongoingLockAction:
             return "ongoing_action"
         @unknown default:
@@ -133,10 +133,10 @@ extension InitializeLockError: DonkeyLockKitError {
         }
     }
 
-    var detailString: String? {
+    var detail: String? {
         switch self {
         case .failedToInitializeSDK(let initializeSDKError):
-            return initializeSDKError.detailString
+            return initializeSDKError.detail
         case .ongoingLockAction:
             return nil
         @unknown default:
@@ -146,10 +146,10 @@ extension InitializeLockError: DonkeyLockKitError {
 }
 
 extension LockError: DonkeyLockKitError {
-    var statusString: String {
+    var code: String {
         switch self {
         case .failedToInitializeSDK(let error):
-            return error.statusString
+            return error.code
         case .lockNotRecognized:
             return "lock_not_recognized"
         case .ongoingLockAction:
@@ -185,10 +185,10 @@ extension LockError: DonkeyLockKitError {
         }
     }
 
-    var detailString: String? {
+    var detail: String? {
         switch self {
         case .failedToInitializeSDK(let error):
-            return error.detailString
+            return error.detail
         case .unknown(message: let message):
             return message
         default:
@@ -198,10 +198,10 @@ extension LockError: DonkeyLockKitError {
 }
 
 extension FinalizeLockError: DonkeyLockKitError {
-    var statusString: String {
+    var code: String {
         switch self {
         case .failedToInitializeSDK(let error):
-            return error.statusString
+            return error.code
         case .ongoingLockAction:
             return "ongoing_action"
         case .lockNotRecognized:
@@ -211,10 +211,10 @@ extension FinalizeLockError: DonkeyLockKitError {
         }
     }
 
-    var detailString: String? {
+    var detail: String? {
         switch self {
         case .failedToInitializeSDK(let error):
-            return error.detailString
+            return error.detail
         default:
             return nil
         }
