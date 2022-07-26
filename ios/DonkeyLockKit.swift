@@ -6,34 +6,45 @@
 //  Copyright © 2022 Facebook. All rights reserved.
 //
 
-import DonkeyLockKit
+//import DonkeyLockKit
 import Foundation
 
-@objc(LockKitWrapper)
+@objc(LockKitWrapperObjC)
 class LockKitWrapper: NSObject {
-    @objc(setLogLevel:)
-    func set(logLevel: NSNumber) {
-        LockKit.shared.set(logLevel: .init(logLevel: logLevel))
+    @objc
+    func setLogLevel(_ logLevel: NSNumber) {
+        print(#function)
+        //LockKit.shared.set(logLevel: .init(logLevel: logLevel))
     }
 
     @objc(setEnvironment:)
-    func setEnvironment(isTestEnvironment: Bool) {
-        LockKit.shared.set(serverEnvironment: isTestEnvironment ? .test : .live)
+    func setEnvironment(_ isTestEnvironment: Bool) {
+        print(#function)
+        //LockKit.shared.set(serverEnvironment: isTestEnvironment ? .test : .live)
     }
 
-    @objc
+    @objc(initializeSdk:callback:)
     func initializeSDK(
-        sdkToken: String,
-        callback: RCTResponseSenderBlock
+        _ sdkToken: String,
+        callback: @escaping RCTResponseSenderBlock
     ) {
-        LockKit.shared.initializeSDK(sdkToken: sdkToken) { result in
-            switch result {
-            case .success:
-                return callback(["status": "success"])
-            case .failure(let error):
-                return callback(["status": "failure"])
-            }
-        }
+        print(#function)
+//
+//        LockKit.shared.initializeSDK(sdkToken: sdkToken) { result in
+//            switch result {
+//            case .success:
+//                return callback([["status": "success"]])
+//            case .failure(let error):
+//                return callback(
+//                    [
+//                        [
+//                            "status": error.statusString,
+//                            "detail": error.detailString
+//                        ]
+//                    ]
+//                )
+//            }
+//        }
     }
 }
 
@@ -60,10 +71,23 @@ extension LogLevel {
     }
 }
 
-extension LockKit.InitializeSDKError {
-    var snakeCaseString: String {
-        switch self {
+extension InitializeSDKError {
+    var statusString: String {
+        return "uninitialized_sdk"
+   }
 
+    var detailString: String {
+        switch self {
+        case .tokenNotSet:
+            return "token_not_set"
+        case .tokenInvalid:
+            return "token_invalid"
+        case .ongoingInitializationWithDifferentToken:
+            return "ongoing_initialization_with_different_token"
+        case .failedToInitializeStorage:
+            return "failed_to_initialize_storage"
+        @unknown default:
+            return "unknown"
         }
     }
 }

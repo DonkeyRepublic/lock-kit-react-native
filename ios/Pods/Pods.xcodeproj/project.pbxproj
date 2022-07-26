@@ -20,13 +20,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		222776C2D49C7E0FD2488DD5CAC46EC3 /* Pods-DonkeyLockKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2117AC43E51449B57D5944E4D640669 /* Pods-DonkeyLockKit-dummy.m */; };
-		33D5EC21B38A904A451AF8DEB0B44856 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		E3C9AF62298517A9B40E7A4074856018 /* Pods-DonkeyLockKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A7CA9F751CC2E4B209D0368B49D587 /* Pods-DonkeyLockKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4705E70553890241256DBF17A4726EDB /* Pods-donkey-lock-kit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BF8A2BEBE68440240D9E81501F009FE /* Pods-donkey-lock-kit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99C0DEF7339540A09CF0D4E1CB028628 /* Pods-donkey-lock-kit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1FF0E2C6092A6C4961FFA3B9FBDC /* Pods-donkey-lock-kit-dummy.m */; };
+		EE1D6DB1EFF0F296DAFB0E5739CE45CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BAAD2DF0A7E7E20B56195A7800D55555 /* PBXContainerItemProxy */ = {
+		D3404FACC25DA7312C948E7D55BEDC5D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -36,35 +36,51 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C7171A7F836979A8500090A16C6271F /* Pods-DonkeyLockKit-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DonkeyLockKit-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3CE10D4DB7F1D71595D4D50792EC8149 /* Pods-DonkeyLockKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DonkeyLockKit"; path = Pods_DonkeyLockKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51DFA3549111EF83435A730B8A246E77 /* Pods-DonkeyLockKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DonkeyLockKit.release.xcconfig"; sourceTree = "<group>"; };
-		5C4BF333CCAEEA4FDB201BC4F089F31B /* Pods-DonkeyLockKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DonkeyLockKit-Info.plist"; sourceTree = "<group>"; };
+		3FD12F7E33D745F288580A45252CB5DA /* Pods-donkey-lock-kit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-donkey-lock-kit-Info.plist"; sourceTree = "<group>"; };
 		5D38722915BE60F5900BB520914D9FA7 /* DonkeyLockKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DonkeyLockKit.debug.xcconfig; sourceTree = "<group>"; };
-		66A7CA9F751CC2E4B209D0368B49D587 /* Pods-DonkeyLockKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DonkeyLockKit-umbrella.h"; sourceTree = "<group>"; };
+		5E3E35FEA7AB60E8DE9CCA9C0AE7842E /* Pods-donkey-lock-kit-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-donkey-lock-kit-acknowledgements.markdown"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7BD5C72B52BB0A6221202D18F4740C7B /* Pods-DonkeyLockKit-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DonkeyLockKit-acknowledgements.plist"; sourceTree = "<group>"; };
+		7BF8A2BEBE68440240D9E81501F009FE /* Pods-donkey-lock-kit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-donkey-lock-kit-umbrella.h"; sourceTree = "<group>"; };
 		7C0637033ACAE074C218FE0E8E2C2C9D /* DonkeyLockKit-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "DonkeyLockKit-xcframeworks.sh"; sourceTree = "<group>"; };
-		96DE0B67BFD71AC18751EE9C16AD36B0 /* Pods-DonkeyLockKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DonkeyLockKit.debug.xcconfig"; sourceTree = "<group>"; };
+		898D51A83937528A45CA1490DCE7F802 /* Pods-donkey-lock-kit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-donkey-lock-kit"; path = Pods_donkey_lock_kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B41779D591DE73F97A7D9D314920CB0 /* Pods-donkey-lock-kit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-donkey-lock-kit.modulemap"; sourceTree = "<group>"; };
+		948AB944B41FC3245EF7BC5D46454DCE /* Pods-donkey-lock-kit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-donkey-lock-kit.debug.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F0AE1172D082DE5ED72394118F71DAE /* Pods-DonkeyLockKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DonkeyLockKit.modulemap"; sourceTree = "<group>"; };
+		A3B3743EBCE0DFA7C956B9F9B74A8321 /* Pods-donkey-lock-kit-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-donkey-lock-kit-acknowledgements.plist"; sourceTree = "<group>"; };
 		AF4C7F5EF422137F53B4DDB35E1355BD /* DonkeyLockKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = DonkeyLockKit.xcframework; sourceTree = "<group>"; };
-		B2117AC43E51449B57D5944E4D640669 /* Pods-DonkeyLockKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DonkeyLockKit-dummy.m"; sourceTree = "<group>"; };
 		E40157603DC0A450BF3090944C8C5B46 /* DonkeyLockKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DonkeyLockKit.release.xcconfig; sourceTree = "<group>"; };
+		EF7C1FF0E2C6092A6C4961FFA3B9FBDC /* Pods-donkey-lock-kit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-donkey-lock-kit-dummy.m"; sourceTree = "<group>"; };
+		F196204A33C09930EC9A54146FAFB450 /* Pods-donkey-lock-kit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-donkey-lock-kit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5E21345B0FF655E6E091D3436150B3D2 /* Frameworks */ = {
+		6831F5EF023D6F7D0AABF0D1F931D264 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33D5EC21B38A904A451AF8DEB0B44856 /* Foundation.framework in Frameworks */,
+				EE1D6DB1EFF0F296DAFB0E5739CE45CC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B07C8942ACC91E4B4DB55243FDEDA28 /* Pods-donkey-lock-kit */ = {
+			isa = PBXGroup;
+			children = (
+				8B41779D591DE73F97A7D9D314920CB0 /* Pods-donkey-lock-kit.modulemap */,
+				5E3E35FEA7AB60E8DE9CCA9C0AE7842E /* Pods-donkey-lock-kit-acknowledgements.markdown */,
+				A3B3743EBCE0DFA7C956B9F9B74A8321 /* Pods-donkey-lock-kit-acknowledgements.plist */,
+				EF7C1FF0E2C6092A6C4961FFA3B9FBDC /* Pods-donkey-lock-kit-dummy.m */,
+				3FD12F7E33D745F288580A45252CB5DA /* Pods-donkey-lock-kit-Info.plist */,
+				7BF8A2BEBE68440240D9E81501F009FE /* Pods-donkey-lock-kit-umbrella.h */,
+				948AB944B41FC3245EF7BC5D46454DCE /* Pods-donkey-lock-kit.debug.xcconfig */,
+				F196204A33C09930EC9A54146FAFB450 /* Pods-donkey-lock-kit.release.xcconfig */,
+			);
+			name = "Pods-donkey-lock-kit";
+			path = "Target Support Files/Pods-donkey-lock-kit";
+			sourceTree = "<group>";
+		};
 		387FC9830E0952AFAAA53D5C393D7234 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,26 +105,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		7C1453CA13139DD5A1AE92D7EB8ED4FD /* Pods-DonkeyLockKit */ = {
+		717825C7586A31F8D59F9007C8B73AC5 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9F0AE1172D082DE5ED72394118F71DAE /* Pods-DonkeyLockKit.modulemap */,
-				2C7171A7F836979A8500090A16C6271F /* Pods-DonkeyLockKit-acknowledgements.markdown */,
-				7BD5C72B52BB0A6221202D18F4740C7B /* Pods-DonkeyLockKit-acknowledgements.plist */,
-				B2117AC43E51449B57D5944E4D640669 /* Pods-DonkeyLockKit-dummy.m */,
-				5C4BF333CCAEEA4FDB201BC4F089F31B /* Pods-DonkeyLockKit-Info.plist */,
-				66A7CA9F751CC2E4B209D0368B49D587 /* Pods-DonkeyLockKit-umbrella.h */,
-				96DE0B67BFD71AC18751EE9C16AD36B0 /* Pods-DonkeyLockKit.debug.xcconfig */,
-				51DFA3549111EF83435A730B8A246E77 /* Pods-DonkeyLockKit.release.xcconfig */,
-			);
-			name = "Pods-DonkeyLockKit";
-			path = "Target Support Files/Pods-DonkeyLockKit";
-			sourceTree = "<group>";
-		};
-		83BE51F1AA58E487E499DF85B4A22DA9 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7C1453CA13139DD5A1AE92D7EB8ED4FD /* Pods-DonkeyLockKit */,
+				2B07C8942ACC91E4B4DB55243FDEDA28 /* Pods-donkey-lock-kit */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -129,8 +129,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				5E8FE5BE5B1C1B664E83D6B60B818A1D /* Pods */,
-				F2534466D126CA8482A0B6DDB74CC795 /* Products */,
-				83BE51F1AA58E487E499DF85B4A22DA9 /* Targets Support Files */,
+				F7BBA4440DF37112AF6E3DC3F862205A /* Products */,
+				717825C7586A31F8D59F9007C8B73AC5 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,14 +140,6 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F2534466D126CA8482A0B6DDB74CC795 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3CE10D4DB7F1D71595D4D50792EC8149 /* Pods-DonkeyLockKit */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		F57971FB88ACEA5F40AB53124CAA7636 /* Support Files */ = {
@@ -161,37 +153,45 @@
 			path = "../Target Support Files/DonkeyLockKit";
 			sourceTree = "<group>";
 		};
+		F7BBA4440DF37112AF6E3DC3F862205A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				898D51A83937528A45CA1490DCE7F802 /* Pods-donkey-lock-kit */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3A9C8FC4F8F8ECB87975FC57E0FBEBD8 /* Headers */ = {
+		5C4F39762244B93B43D288A0EED8CE38 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3C9AF62298517A9B40E7A4074856018 /* Pods-DonkeyLockKit-umbrella.h in Headers */,
+				4705E70553890241256DBF17A4726EDB /* Pods-donkey-lock-kit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1D1583219B326752D38534FFD3E76C04 /* Pods-DonkeyLockKit */ = {
+		90A5F68C89ADB2C4AE20988C40D5DE9D /* Pods-donkey-lock-kit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A3849EAAB6C1D20CB414DE5E69461562 /* Build configuration list for PBXNativeTarget "Pods-DonkeyLockKit" */;
+			buildConfigurationList = A4ECCA6CE4673C76F8E646946F75BD00 /* Build configuration list for PBXNativeTarget "Pods-donkey-lock-kit" */;
 			buildPhases = (
-				3A9C8FC4F8F8ECB87975FC57E0FBEBD8 /* Headers */,
-				269F843A50BFBF013D4D34CBEE752FA0 /* Sources */,
-				5E21345B0FF655E6E091D3436150B3D2 /* Frameworks */,
-				3C26D4C6D6ACCB43F760AF98D6A36991 /* Resources */,
+				5C4F39762244B93B43D288A0EED8CE38 /* Headers */,
+				7B154E56EE450A6049CE3369C3B3B47C /* Sources */,
+				6831F5EF023D6F7D0AABF0D1F931D264 /* Frameworks */,
+				16E1331457E69D7D9216DA412C9803A0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				177580812E7C1F72B1979AA08844AA78 /* PBXTargetDependency */,
+				898F2C9DEE585C5787BAD5708B3E30A9 /* PBXTargetDependency */,
 			);
-			name = "Pods-DonkeyLockKit";
-			productName = Pods_DonkeyLockKit;
-			productReference = 3CE10D4DB7F1D71595D4D50792EC8149 /* Pods-DonkeyLockKit */;
+			name = "Pods-donkey-lock-kit";
+			productName = Pods_donkey_lock_kit;
+			productReference = 898D51A83937528A45CA1490DCE7F802 /* Pods-donkey-lock-kit */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -212,18 +212,18 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = F2534466D126CA8482A0B6DDB74CC795 /* Products */;
+			productRefGroup = F7BBA4440DF37112AF6E3DC3F862205A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				27A4942ACD8B7AAAEE32F2C6FDFA4F1D /* DonkeyLockKit */,
-				1D1583219B326752D38534FFD3E76C04 /* Pods-DonkeyLockKit */,
+				90A5F68C89ADB2C4AE20988C40D5DE9D /* Pods-donkey-lock-kit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3C26D4C6D6ACCB43F760AF98D6A36991 /* Resources */ = {
+		16E1331457E69D7D9216DA412C9803A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,29 +254,29 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		269F843A50BFBF013D4D34CBEE752FA0 /* Sources */ = {
+		7B154E56EE450A6049CE3369C3B3B47C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222776C2D49C7E0FD2488DD5CAC46EC3 /* Pods-DonkeyLockKit-dummy.m in Sources */,
+				99C0DEF7339540A09CF0D4E1CB028628 /* Pods-donkey-lock-kit-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		177580812E7C1F72B1979AA08844AA78 /* PBXTargetDependency */ = {
+		898F2C9DEE585C5787BAD5708B3E30A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DonkeyLockKit;
 			target = 27A4942ACD8B7AAAEE32F2C6FDFA4F1D /* DonkeyLockKit */;
-			targetProxy = BAAD2DF0A7E7E20B56195A7800D55555 /* PBXContainerItemProxy */;
+			targetProxy = D3404FACC25DA7312C948E7D55BEDC5D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		37E98B2F6CF66F884E4995329F1D0930 /* Release */ = {
+		3EFB1E77CD52B295E8B0022F2AB891D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51DFA3549111EF83435A730B8A246E77 /* Pods-DonkeyLockKit.release.xcconfig */;
+			baseConfigurationReference = 948AB944B41FC3245EF7BC5D46454DCE /* Pods-donkey-lock-kit.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -289,47 +289,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-DonkeyLockKit/Pods-DonkeyLockKit-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-donkey-lock-kit/Pods-donkey-lock-kit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DonkeyLockKit/Pods-DonkeyLockKit.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4D6110289D5328A97CB2139C06FAC334 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96DE0B67BFD71AC18751EE9C16AD36B0 /* Pods-DonkeyLockKit.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-DonkeyLockKit/Pods-DonkeyLockKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DonkeyLockKit/Pods-DonkeyLockKit.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-donkey-lock-kit/Pods-donkey-lock-kit.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -417,6 +382,41 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		AD727A25ECFFFB6DF08CFE552436A661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F196204A33C09930EC9A54146FAFB450 /* Pods-donkey-lock-kit.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-donkey-lock-kit/Pods-donkey-lock-kit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-donkey-lock-kit/Pods-donkey-lock-kit.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -514,11 +514,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A3849EAAB6C1D20CB414DE5E69461562 /* Build configuration list for PBXNativeTarget "Pods-DonkeyLockKit" */ = {
+		A4ECCA6CE4673C76F8E646946F75BD00 /* Build configuration list for PBXNativeTarget "Pods-donkey-lock-kit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4D6110289D5328A97CB2139C06FAC334 /* Debug */,
-				37E98B2F6CF66F884E4995329F1D0930 /* Release */,
+				3EFB1E77CD52B295E8B0022F2AB891D2 /* Debug */,
+				AD727A25ECFFFB6DF08CFE552436A661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

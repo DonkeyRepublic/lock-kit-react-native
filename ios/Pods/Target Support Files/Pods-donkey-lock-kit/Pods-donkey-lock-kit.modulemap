@@ -1,0 +1,6 @@
+framework module Pods_donkey_lock_kit {
+  umbrella header "Pods-donkey-lock-kit-umbrella.h"
+
+  export *
+  module * { export * }
+}

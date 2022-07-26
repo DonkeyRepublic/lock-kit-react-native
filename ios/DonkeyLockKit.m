@@ -1,11 +1,17 @@
-#import "DonkeyLockKit.h"
-
+#import <React/RCTBridgeModule.h>
 #ifdef RCT_NEW_ARCH_ENABLED
 #import "RNDonkeyLockKitSpec.h"
 #endif
 
-@implementation DonkeyLockKit
-RCT_EXPORT_MODULE()
+@interface RCT_EXTERN_REMAP_MODULE(DonkeyLockKit, LockKitWrapperObjC, NSObject)
+
+RCT_EXTERN_METHOD(setLogLevel: (NSNumber *)logLevel)
+RCT_EXTERN_METHOD(setEnvironment: (BOOL)isTestEnvironment)
+RCT_EXTERN_METHOD(initializeSdk: (NSString *)sdkToken callback (RCTResponseSenderBlock *)callback)
+
+@end
+
+@implementation LockKitWrapperObjC
 
 // Example method
 // See // https://reactnative.dev/docs/native-modules-ios

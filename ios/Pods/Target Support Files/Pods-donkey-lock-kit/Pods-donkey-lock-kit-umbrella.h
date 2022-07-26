@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_DonkeyLockKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_DonkeyLockKitVersionString[];
+FOUNDATION_EXPORT double Pods_donkey_lock_kitVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_donkey_lock_kitVersionString[];
 
