@@ -71,10 +71,9 @@ class DonkeyLockKit: RCTEventEmitter {
 extension LogLevel {
     init(logLevel: NSNumber) {
         switch logLevel.intValue {
-        case 0: self = .debug
-        case 1: self = .info
-        case 2: self = .error
-        case 3: self = .off
+        case 1: self = .error
+        case 2: self = .info
+        case 3: self = .debug
         default: self = .off
         }
     }
