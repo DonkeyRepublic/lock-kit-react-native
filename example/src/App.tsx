@@ -17,7 +17,7 @@ export default function App() {
   React.useEffect(() => {
     setLogLevel(LogLevel.DEBUG)
     setEnvironment(Environment.TEST)
-    initializeSdk('<PROVIDE SDK TOKEN>', (result) => {
+    initializeSdk('wzfV-C-biSt2kPmY6hstoyZpH17ufN6M6GRVZYj5', (result) => {
       setSdkInitialized(result.status)
       initializeLock(LOCK_NAME, 'key', 'passkey', (result) => {
         setLockInitialized(result.status)
