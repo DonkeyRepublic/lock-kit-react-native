@@ -74,6 +74,7 @@ export type Result = {
    * error code for failure status, possible values:
    * "ongoing_action" - While having one lock action in progress and try to perform another one. Note that when this error is thrown, it doesn't stop the original action.
    * "uninitialized_sdk" - When trying to perform any action while initializeSdk was not called with valid sdk token. It can also be thrown when initializeSdk uses unauthorized sdkToken.
+   * "lock_not_recognized" - Lock name not recognized. Please initialize the lock first.
    * "out_of_keys" - When eKey has run out of the available commands for performing action on the lock. Please use new eKey if this occurs.
    * "bluetooth_off" - Bluetooth is turned off on the phone device, notify user to enable it in order to perform the action.
    * "bluetooth_unauthorized" - The app does not have bluetooth permission, notify user to allow using bluetooth in order to perform the action.
