@@ -34,7 +34,7 @@ export enum Environment {
  * Result type for all asynchronous actions in DonkeyLockKit library
  */
 export type Result = {
-  /** 
+  /**
    * "success" or "failure"
    */
   status: string;
@@ -42,6 +42,7 @@ export type Result = {
    * error code for failure status, possible values:
    * "ongoing_action" - While having one lock action in progress and try to perform another one. Note that when this error is thrown, it doesn't stop the original action.
    * "uninitialized_sdk" - When trying to perform any action while initializeSdk was not called with valid sdk token. It can also be thrown when initializeSdk uses unauthorized sdkToken.
+   * "lock_not_recognized" - Lock name not recognized. Please initialize the lock first.
    * "out_of_keys" - When eKey has run out of the available commands for performing action on the lock. Please use new eKey if this occurs.
    * "bluetooth_off" - Bluetooth is turned off on the phone device, notify user to enable it in order to perform the action.
    * "bluetooth_unauthorized" - The app does not have bluetooth permission, notify user to allow using bluetooth in order to perform the action.
@@ -83,31 +84,31 @@ export type ConnectionUpdate = {
    * "extra_lock_check" - During `prepareEndRental` after making sure the device is properly locked the app does `extra_lock_check` to make sure it stays locked.
    */
   code: string;
-  /** 
+  /**
    * value describing each code for logging purposes
    */
   description: string;
-  /** 
+  /**
    * optional value for "weak_signal" code with rssi signal strength
    */
   rssi?: number;
 };
 
-/** 
+/**
  * Defines the log levels for the framework, can be done only before initializing SDK
  */
 export function setLogLevel(logLevel: LogLevel) {
   return DonkeyLockKit.setLogLevel(logLevel);
 }
 
-/** 
+/**
  * Defines the server environment for the framework., can be done only before initializing SDK
  */
 export function setEnvironment(environment: Environment) {
   return DonkeyLockKit.setEnvironment(environment === Environment.TEST);
 }
 
-/** 
+/**
  * In order to interact with Donkey bike locks, SDK must be initialized with the [sdkToken] provided by Donkey Republic.
  */
 export function initializeSdk(
@@ -151,7 +152,7 @@ export function unlock(deviceName: string, callback: (result: Result) => void) {
 
 /**
  * For preparing Donkey bike for end rental, use this function. `prepareEndRental` invokes checking of the lock state including
- * the `extra_lock_check` - necessary operation before ending rental to make sure the vehicle is safe from any misuse. 
+ * the `extra_lock_check` - necessary operation before ending rental to make sure the vehicle is safe from any misuse.
  * In the case of lock being unlocked, this function will try to lock it as well.
  * Note however that this does not end the rental. Remember to call the required endpoint on TOMP.
  * @param deviceName value of the given lock device name for bluetooth communication
