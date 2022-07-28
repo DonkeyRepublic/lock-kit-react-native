@@ -42,13 +42,17 @@ class DonkeyLockKit: RCTEventEmitter {
     }
 
     @objc func unlock(_ lockName: String, callback: @escaping RCTResponseSenderBlock) {
-        LockKit.shared.unlock(lockName: lockName, onStatusChanged: { _ in }) { result in
+        LockKit.shared.unlock(lockName: lockName, onStatusChanged: { update in
+            self.sendEvent(withName: "onUnlockUpdate", body: update.toDictionary)
+        }) { result in
             callback([result.toDictionary])
         }
     }
 
     @objc func prepareEndRental(_ lockName: String, callback: @escaping RCTResponseSenderBlock) {
-        LockKit.shared.prepareEndRental(lockName: lockName, onStatusChanged: { _ in }) { result in
+        LockKit.shared.prepareEndRental(lockName: lockName, onStatusChanged: { update in
+            self.sendEvent(withName: "onEndRentalUpdate", body: update.toDictionary)
+        }) { result in
             callback([result.toDictionary])
         }
     }
@@ -59,7 +63,7 @@ class DonkeyLockKit: RCTEventEmitter {
     }
 
     override func supportedEvents() -> [String]! {
-        return ["onLockUpdate"]
+        return ["onLockUpdate", "onUnlockUpdate", "onEndRentalUpdate"]
     }
 
     @objc
