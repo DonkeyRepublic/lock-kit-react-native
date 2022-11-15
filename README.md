@@ -131,6 +131,13 @@ export type ConnectionUpdate = {
 };
 ```
 
+## Changelog
+
+### 0.0.2
+- Update Android React Native dependency to match version used in other parts of the project (0.68.2)
+### 0.0.1
+- Initial release
+
 ## License
 
 MIT
