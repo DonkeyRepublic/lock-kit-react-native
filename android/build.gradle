@@ -8,7 +8,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:7.0.4'
+    classpath 'com.android.tools.build:gradle:8.11.1'
     // noinspection DifferentKotlinGradleVersion
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
@@ -34,7 +34,12 @@ def getExtOrIntegerDefault(name) {
 }
 
 android {
+  namespace "com.donkeylockkit"
   compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
+
+  buildFeatures {
+    buildConfig true
+  }
 
   defaultConfig {
     minSdkVersion getExtOrIntegerDefault('minSdkVersion')
@@ -47,13 +52,19 @@ android {
     }
   }
 
-  lintOptions {
+  lint {
     disable 'GradleCompatible'
   }
 
   compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
+    sourceCompatibility JavaVersion.VERSION_11
+    targetCompatibility JavaVersion.VERSION_11
+  }
+}
+
+kotlin {
+  compilerOptions {
+    jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
   }
 }
 
@@ -133,7 +144,7 @@ dependencies {
   //noinspection GradlePackageUpdate, GradleDynamicVersion, GradlePackageVersionRange
   implementation 'com.facebook.react:react-native:+'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  api 'bike.donkey:lockkit:1.3.0'
+  api 'bike.donkey:lockkit:1.4.1'
 // From node_modules
 }
 

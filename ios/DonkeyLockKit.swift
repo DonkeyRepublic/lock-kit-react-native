@@ -253,7 +253,7 @@ extension StatusUpdate {
             case .sendingCommand:
                 return "sending_command"
             case .waitingForUserAction:
-                return "push_to_unlock"
+                return "push_to_lock"
             case .extraLockCheck:
                 return "extra_lock_check"
             @unknown default:

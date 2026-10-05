@@ -118,6 +118,10 @@ class DonkeyLockKitModule(reactContext: ReactApplicationContext) : ReactContextB
     is LockError.LockCommandError -> "fatal_error"
     LockError.PostConnectionLockCheckFailed -> "post_connection_lock_check_failed"
     is LockError.ExtraLockCheckFailed -> "extra_lock_check_failed"
+    LockError.LockMoving -> "lock_moved"
+    LockError.HitSpoke -> "hit_spoke"
+    LockError.LockBroken -> "lock_broken"
+    LockError.InvalidDeviceName -> "invalid_device_name"
     is LockError.FatalError -> "fatal_error"
   }
 
@@ -133,6 +137,8 @@ class DonkeyLockKitModule(reactContext: ReactApplicationContext) : ReactContextB
         ConnectionUpdate.SendingCommand -> "sending_command"
         ConnectionUpdate.PushToLock -> "push_to_lock"
         ConnectionUpdate.ExtraLockCheck -> "extra_lock_check"
+        ConnectionUpdate.AutomaticLock -> "automatic_lock"
+        ConnectionUpdate.AutomaticUnlock -> "automatic_unlock"
       }
     )
     map.putString("description", description)

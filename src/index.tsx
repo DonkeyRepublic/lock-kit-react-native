@@ -55,6 +55,10 @@ export type Result = {
    * "lock_timeout" - The bluetooth device wasn't locked in specified time. Notify the user to physically push the lock to lock it when trying to perform lock again.
    * "post_connection_lock_check_failed" - During special conditions, this error can be thrown upon reading characteristics when lock isn't properly locked.
    * "extra_lock_check_failed" - `extra_lock_check` connection update, the lock device unlocks
+   * "lock_moved" - [Android only] The lock moved while it was locking. Notify the user to keep the vehicle still and try to lock again.
+   * "hit_spoke" - [Android only] The lock hit a wheel spoke while locking. Notify the user to move the wheel slightly and try to lock again.
+   * "lock_broken" - [Android only] The lock is probably broken and cannot perform the action.
+   * "invalid_device_name" - [Android only] The provided device name does not match any known lock type format.
    * "fatal_error" - When unexpected error shows up during processes not related to establishing connection. Check detail to find out more information.
    */
   code?: string;
@@ -81,6 +85,8 @@ export type ConnectionUpdate = {
    * "reading_lock_data" - The app has read the characteristic data from the bluetooth device in order to determine next action.
    * "sending_command" - The app has sent eKey data to the bluetooth device to perform the desired action.
    * "push_to_lock" - The bluetooth device notified the app it had enabled the lock mechanism and user needs to manually push the lock to lock it.
+   * "automatic_lock" - [Android only] The bluetooth device notified the app it started locking automatically.
+   * "automatic_unlock" - [Android only] The bluetooth device notified the app it started unlocking automatically.
    * "extra_lock_check" - During `prepareEndRental` after making sure the device is properly locked the app does `extra_lock_check` to make sure it stays locked.
    */
   code: string;
